@@ -1,0 +1,122 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/* Estilos Base */
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    
+}
+h1,h2,h3,p {
+ margin: 0;
+}
+
+
+
+/* Estilos Header */
+
+.header_title {
+    background-color: #104479 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.titulo {  
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.contacto {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.direccion, .telefono, .correo {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    height: 40px;
+    width: 100%;
+    padding: 5px;
+}
+
+.telefono, .correo {
+    width: 50%;
+}
+
+.correo {
+    justify-content: flex-end;
+}
+
+.logo_ubicacion{ 
+    margin-right: 5px;
+    align-items: center;
+    margin-right: 5px;
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+@media screen and (min-width: 700px) {
+    .contacto {
+        gap: 16px;
+    }
+
+    .direccion {
+        width: 45%; /* Más ancho */
+        flex: none;
+    }
+    .telefono {
+        width: 20%; /* Menos ancho */
+        flex: none;
+    }
+    .correo {
+        width: 30%; /* Intermedio */
+        flex: none;
+    }
+
+    .columna__50 {
+        margin-top: 10px;
+        width: 50%;
+    }  
+    .imagen2 {
+        height: 45rem !important;
+    }    
+}
+
+@media screen and (min-width: 800px) {
+    .icono__menu {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        height: auto;
+        position: static;
+        width: auto;
+        justify-content: flex-start; /* Alinea a la izquierda */         
+    }
+
+    .menu_link {
+        padding: 10px 50px;
+    }
+
+    .banner {
+         top: -5px;
+    }
+
+    .imagen2 {
+        height: 30rem !important;
+    }
+}

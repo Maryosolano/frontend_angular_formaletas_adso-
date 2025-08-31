@@ -1,0 +1,53 @@
+/* Estilos del footer */
+.footer {
+    background-color: #104479;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px;
+    margin: 1rem 0px 0px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; 
+}
+
+.main__footer {
+    padding: 0px;
+    margin: 0px;
+    font-size: 0.8rem;
+}	
+
+.me__footer {
+    padding: 0px;
+    margin: 0px;
+    font-size: 0.6rem;
+     color: #9b9b9b;
+}	
+
+/* @media screen and (min-width: 400px) {
+    .footer {
+        bottom: 0;
+    }    
+}
+
+@media screen and (min-width: 765px) {
+    .footer {
+        position: absolute;
+        bottom: 0;
+    }    
+}
+
+@media screen and (min-width: 880px) {
+    .footer {
+        position: relative;
+    } 
+}
+
+@media screen and (min-width: 910px) {
+    .footer {
+        position: absolute;
+    }    
+} */

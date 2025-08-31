@@ -1,0 +1,137 @@
+/* Estilos del main */
+
+div {
+    flex: 1;
+}
+
+.main__group {
+    padding: 5px;
+    background-color: #104479;
+    color: #ffffff;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.titulo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+h6 {
+    margin: 0.3rem auto;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.item {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    height: 10rem;
+    overflow: hidden;
+}
+
+.imagen,
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Estado inicial */
+.imagen {
+    opacity: 1;
+    z-index: 2;
+}
+
+.overlay-text {
+    opacity: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Hover en desktop */
+.image-wrapper:hover .imagen {
+    opacity: 0;
+}
+
+.image-wrapper:hover .overlay-text {
+    opacity: 1;
+}
+
+.parrafo {
+    line-height: 1.5;
+    margin: 1rem 0 !important;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+    color: #ffffff;
+    margin-top: 1rem;
+}
+
+thead {
+    text-align: center;
+    font-size: 16px;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .image-wrapper:active .imagen {
+        opacity: 0;
+    }
+
+    .image-wrapper:active .overlay-text {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .item {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@media screen and (min-width: 800px) {
+
+    .item {
+        flex: 1 1 calc(25% - 10px);
+    }
+}

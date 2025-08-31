@@ -1,0 +1,85 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+
+<main class="main__group">
+  <section>
+    <h2 class="titulo">Tu socio estratégico para obras de alto impacto.</h2>
+    <p class="parrafo">En Formaletas Construcción S.A.S. convertimos cada vertido en una garantía de éxito.
+      Nuestras soluciones de alquiler de formaletas están diseñadas para ajustarse a las características específicas de
+      tu proyecto,
+      asegurando acabados perfectos, reducción de tiempos muertos y el respaldo de un equipo con experiencia
+      inigualable.</p>
+  </section>
+  <hr>
+  <section>
+    <h2 class="titulo">¿Qué Hacemos por Ti?.</h2>
+    <div class="contenedor">
+      <div class="item">
+        <h6>Experiencia Especializada.</h6>
+        <div class="image-wrapper">
+          <img class="imagen" src="assets/img/imagen formaleta1.jpg" alt=""> <!-- imagen Provisional -->
+          <span class="overlay-text">
+            Te asesoramos en la elección, montaje y desmontaje de formaletas, optimizando recursos y evitando
+            contratiempos.
+          </span>
+        </div>
+      </div>
+      <div class="item">
+        <h6>Calidad Certificada.</h6>
+        <div class="image-wrapper">
+          <img class="imagen" src="assets/img/imagen formaleta1.jpg" alt=""> <!-- imagen Provisional -->
+          <span class="overlay-text">
+            Solo manejamos equipos que cumplen con la normativa vigente y los estándares más exigentes de la
+            industria.
+          </span>
+        </div>
+      </div>
+      <div class="item">
+        <h6>Eficiencia Operativa.</h6>
+        <div class="image-wrapper">
+          <img class="imagen" src="assets/img/imagen formaleta1.jpg" alt=""><!-- imagen Provisional -->
+          <span class="overlay-text">
+            Implementamos cronogramas de entrega y recogida que se alinean con tus plazos de obra, garantizando
+            continuidad en el proceso constructivo.
+          </span>
+        </div>
+      </div>
+      <div class="item">
+        <h6>Acompañamiento Integral.</h6>
+        <div class="image-wrapper">
+          <img class="imagen" src="assets/img/imagen formaleta1.jpg" alt=""> <!-- imagen Provisional -->
+          <span class="overlay-text">
+            Desde la planeación hasta la culminación, nuestro equipo técnico te brinda soporte constante para que
+            cada etapa se desarrolle sin sorpresas.
+          </span>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="beneficio">
+      <h3 class="titulo">Beneficios que marcan la diferencia.</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Beneficio.</th>
+            <th>Impacto en tu Proyecto.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of beneficios">
+            <td>{{ item.descripcion }}</td>
+            <td>{{ item.detalle }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr>
+    <div class="confianza">
+      <h3 class="titulo">Construye con la Confianza del Futuro.</h3>
+      <p class="parrafo">Cada formaleta que entregamos refleja nuestro compromiso con la excelencia y la seguridad. Únete a la
+        comunidad de clientes que han elevado sus proyectos con soluciones precisas y eficientes.
+      </p>
+    </div>
+  </section>
+</main>
+<app-footer></app-footer>

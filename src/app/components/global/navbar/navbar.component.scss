@@ -1,0 +1,167 @@
+/* Estilos navbar */
+
+.main-nav {
+    position: relative;
+    width: 100%;
+    z-index: 3000px;
+    padding: 10px;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icono_menu {
+    position: relative;
+    filter: brightness(0) invert(1);
+    border: 1px solid white;
+    padding: 3px;
+    border-radius: 3px;
+    width: 35px;
+    height: 35px;
+    z-index: 2000;
+}
+
+.social__icon {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2000;
+    gap: 15px;
+}
+
+.icono_link {
+    padding: 5px;
+    border-radius: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    object-fit: contain;
+}	
+
+.menu {
+    position: absolute;
+    height: 0;
+}	
+
+.menu--show {
+    background-color: rgba(0,0,0,0.65);
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    z-index: 2000;
+    overflow: hidden;
+    transition: height 0.3s linear;
+    height: 216px; /* Altura total del Menu al desplegarse, 54 pixeles por cada item */
+}
+
+.menu_link {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu_link:hover {
+    background-color: #104479;
+}
+
+.menu_link_select {
+    background-color: #104479;
+}
+
+/* Estilos del banner */
+
+.titulo {  
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.subtitulo {
+    font-size: 14px;
+    margin-bottom: 0%;
+}
+
+.banner {
+    margin-top: -55px;
+    position: relative;
+}
+
+.banner:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.banner__img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.banner__content {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    z-index: 1500;
+    font-size: 1.5em;
+}
+
+@media screen and (min-width: 800px) {
+
+    .icono_menu {
+        display: none;
+    }
+
+    .menu, .menu--show{
+        background-color: rgba(0,0,0,0.65);
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 800px;
+        padding: 0;
+        margin: 0 !important;
+        list-style: none;
+        text-align: center;
+        z-index: 2000;
+        overflow: hidden;
+        transition: height 0.3s linear;
+        display: flex;
+        height: auto;
+        position: static;
+        width: auto;
+        justify-content: flex-start; /* Alinea a la izquierda */         
+    }
+    .menu-item{
+        width: 9rem;
+    }
+
+    .banner {
+        margin-top: -75px;
+    }
+}

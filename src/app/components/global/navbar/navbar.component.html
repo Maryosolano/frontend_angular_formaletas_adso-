@@ -1,0 +1,46 @@
+<div class="main-nav">
+        <div class="contenedor">
+            <span class="icon_menu">
+                <img class = 'icono_menu'
+                    src="assets/img/menu.png" 
+                    alt="menu" 
+                    id="menuIcon"
+                    (click)="mostrar_items();">
+            </span>
+            <ul [class]="!estaActivo? 'menu' : 'menu--show'" id="menu"> 
+                <li class="menu-item">
+                    <a href="index.html" class="menu_link menu_link_select">Inicio</a>
+                </li>
+                <li class="menu-item">
+                    <a href="servicios.html" class="menu_link">Servicios</a>
+                </li>
+                <li class="menu-item">
+                    <a href="nosotros.html" class="menu_link">Nosotros</a>
+                </li>
+                <li class="menu-item">
+                    <a href="contacto.html" class="menu_link">Contacto</a>
+                </li>
+            </ul>
+            <div class="social__icon">
+                <a href="#">
+                    <img class="icono_link" src="assets/img/facebook.png" alt="facebook" >
+                </a>
+                <a href="#">
+                    <img class="icono_link" src="assets/img/twitter.png" alt="twitter">
+                </a>
+                <a href="#">
+                    <img class="icono_link" src="assets/img/instagram.png" alt="instagram">
+                </a>
+                <a href="#">
+                    <img class="icono_link" src="assets/img/linkedin.png" alt="linkedin">
+                </a>
+            </div>
+        </div>   
+    </div>
+<section class="banner">
+        <img class="banner__img" src="assets/img/imagen formaleta1.jpg" alt="">
+        <div class="banner__content">
+            <h1 class="titulo">Formaletas Construcción S.A.S</h1>
+            <p class="subtitulo">Su socio confiable en soluciones de formaletas para la construcción.</p>
+        </div>
+</section>
