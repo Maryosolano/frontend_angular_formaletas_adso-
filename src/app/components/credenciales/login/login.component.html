@@ -1,19 +1,54 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
-<p>login works!</p>
-<form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label" placeholder="Ingrese su usuario">Usuario</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+
+<div class="contenedor">
+  <form [formGroup]="formRegistro" class="formulario">
+    <h2>Login</h2>
+    <div class="item">
+      <label>
+        Nombre:
+      </label>
+      <div class="input-group">
+        <i class="fas fa-user left-icon"></i>
+        <input type="text" formControlName="nombre" placeholder="Ingrese su nombre">
+      </div>
+    </div>
+    <div *ngIf="formRegistro.get('nombre')?.touched && formRegistro.get('nombre')?.invalid" class="mensaje-error">
+      <ng-container>
+        <small *ngIf="formRegistro.get('nombre')?.errors?.['required']">El nombre es obligatorio.</small>
+        <small *ngIf="formRegistro.get('nombre')?.errors?.['minlength']">El nombre debe tener al menos 5
+          caracteres.</small>
+      </ng-container>
+    </div>
+    <!--  <div class="item">
+            <label>
+                Email:
+            </label>
+            <input type="email" formControlName="email" placeholder="Ingrese su email">
+        </div>
+        <div *ngIf="formRegistro.get('email')?.touched && formRegistro.get('email')?.invalid" class="mensaje-error">
+            <ng-container>
+                <small *ngIf="formRegistro.get('email')?.errors?.['required']">El email es obligatorio.</small>
+                <small *ngIf="formRegistro.get('email')?.errors?.['pattern']">El email no tiene un formato válido.</small>
+            </ng-container>
+        </div> -->
+    <div class="item">
+      <label>
+        Contraseña:
+      </label>
+      <div class="input-group">
+        <i class="fa-solid fa-lock left-icon"></i>
+        <input [type]="verTexto? 'text' : 'password'" formControlName="password" placeholder="Ingrese su contraseña">
+        <i class="right-icon" [class]="verTexto? 'fas fa-eye-slash' : 'fas fa-eye' " (click)="verPassword()"></i>
+      </div>      
+    </div>
+    <div *ngIf="formRegistro.get('password')?.touched && formRegistro.get('password')?.invalid" class="mensaje-error">
+      <ng-container>
+        <small *ngIf="formRegistro.get('password')?.errors?.['required']">La contraseña es obligatoria.</small>
+      </ng-container>
+    </div>
+    <button class="btn" type="submit" (click)="guardar()">Aceptar</button>
+  </form>
+
+</div>
+<app-footer></app-footer>
