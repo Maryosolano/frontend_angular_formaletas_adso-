@@ -49,8 +49,12 @@ export class RegistroComponent {
       { type: 'pattern', message: 'El correo no es valido' }
     ],
     password: [
-      { type: 'required', message: 'La contrase;a es obligatoria' },
-      { type: 'pattern', message: 'La contrase;a debe tener minimo 8 caracteres, entre ellos 1 mayuscula, 1 minuscula, 1 numero y 1 caracter especial' }
+      { type: 'required', 
+        message: 'La contrase;a es obligatoria' 
+      },
+      { type: 'pattern', 
+        message: 'La contrase;a debe tener minimo 8 caracteres, entre ellos 1 mayuscula, 1 minuscula, 1 numero y 1 caracter especial' 
+      }
     ],
     telefono: [
       { type: 'required', message: 'El telefono es obligatorio' },
@@ -80,8 +84,10 @@ export class RegistroComponent {
   crearFormulario(){
     this.formRegistro = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(5)]],
-      email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/)]], /* se valida que sea un correo atraves de la expresion regular */
-      password: ['', [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/)]], /* se valida que la contrase;a tenga minimo 8 caracteres entre ellos 1 mayuscula, 1 minuscula, 1 numero y 1 caracter especial */
+       /* se valida que sea un correo atraves de la expresion regular */
+      email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/)]], 
+      /* se valida que la contrase;a tenga minimo 8 caracteres entre ellos 1 mayuscula, 1 minuscula, 1 numero y 1 caracter especial */
+      password: ['', [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/)]], 
       telefono: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]], /* se valida que el telefono tenga 10 digitos */
       rol: ['',[Validators.required]],
       terminos: [false, Validators.requiredTrue] /* se valida que los terminos y condiciones esten aceptados */

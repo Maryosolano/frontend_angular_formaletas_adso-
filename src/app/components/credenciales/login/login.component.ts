@@ -14,15 +14,12 @@ import { FooterComponent } from '../../global/footer/footer.component';
 })
 export class LoginComponent {
 
- formRegistro: any = FormGroup;
+  formRegistro: any = FormGroup;
   verTexto: boolean = false;
   
   get nombreNoValido() {
     return this.formRegistro.get('nombre').invalid && this.formRegistro.get('nombre').touched;
   }
-  /* get emailNoValido() {
-    return this.formRegistro.get('email').invalid && this.formRegistro.get('email').touched;
-  } */
   get passwordNoValido() {
     return this.formRegistro.get('password').invalid && this.formRegistro.get('password').touched;
   }
@@ -32,10 +29,6 @@ export class LoginComponent {
       { type: 'required', message: 'El nombre es obligatorio' },
       { type: 'minlength', message: 'El nombre debe tener al menos 5 caracteres' }
     ],
-   /*  email: [
-      { type: 'required', message: 'El correo es obligatorio' },
-      { type: 'pattern', message: 'El correo no es valido' }
-    ], */
     password: [
       { type: 'required', message: 'La contrase;a es obligatoria' }
     ],
@@ -54,8 +47,8 @@ export class LoginComponent {
   crearFormulario(){
     this.formRegistro = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(5)]],
-      //email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/)]], /* se valida que sea un correo atraves de la expresion regular */
-      password: ['', [Validators.required, Validators.minLength(8)]], /* se valida que tenga minimo 8 caracteres */
+       /* se valida que tenga minimo 8 caracteres */
+      password: ['', [Validators.required, Validators.minLength(8)]],
     })
     console.log(this.formRegistro.value);
   }
@@ -65,7 +58,8 @@ export class LoginComponent {
       console.log('Formulario no valido', this.formRegistro.value);
       
       return Object.values(this.formRegistro.controls).forEach((control: any) => {
-        control.markAsTouched(); /* marca todos los campos como tocados para que se muestren los mensajes de error */
+        /* marca todos los campos como tocados para que se muestren los mensajes de error */
+        control.markAsTouched(); 
       }); 
     }
     // Realizar el envío del formulario o cualquier otra acción necesaria

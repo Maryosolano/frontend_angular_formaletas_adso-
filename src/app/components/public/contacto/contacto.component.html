@@ -1,0 +1,92 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<h2>Contáctenos</h2>
+<p>Estamos aquí para ayudarle con sus necesidades de formaletas. Contáctenos para obtener más información o
+    solicitar
+    un presupuesto.
+</p>
+<div class="contenedor">
+    <form [formGroup]="formularioContacto" class="formulario">
+        <div class="item">
+            <label>
+                Nombre:
+            </label>
+            <div class="input-group">
+                <i class="fas fa-user left-icon"></i>
+                <input type="text" formControlName="nombre" placeholder="Ingrese su nombre">
+            </div>
+        </div>
+        <div *ngIf="formularioContacto.get('nombre')?.touched && formularioContacto.get('nombre')?.invalid"
+            class="mensaje-error">
+            <ng-container>
+                <small *ngIf="formularioContacto.get('nombre')?.errors?.['required']">El nombre es obligatorio.</small>
+                <small *ngIf="formularioContacto.get('nombre')?.errors?.['minlength']">El nombre debe tener al menos 5
+                    caracteres.</small>
+            </ng-container>
+        </div>
+        <div class="item">
+            <label>
+                Email:
+            </label>
+            <div class="input-group">
+                <i class="fa-solid fa-envelope left-icon"></i>
+                <input type="email" formControlName="email" placeholder="Ingrese su email">
+            </div>
+        </div>
+        <div *ngIf="formularioContacto.get('email')?.touched && formularioContacto.get('email')?.invalid"
+            class="mensaje-error">
+            <ng-container>
+                <small *ngIf="formularioContacto.get('email')?.errors?.['required']">El email es obligatorio.</small>
+                <small *ngIf="formularioContacto.get('email')?.errors?.['pattern']">El email no tiene un formato
+                    válido.</small>
+            </ng-container>
+        </div>
+        <div class="item">
+            <label>
+                Teléfono:
+            </label>
+            <div class="input-group">
+                <i class="fa-solid fa-phone left-icon"></i>
+                <input type="phone" formControlName="telefono" placeholder="Ingrese su teléfono">
+            </div>
+        </div>
+        <div *ngIf="formularioContacto.get('telefono')?.touched && formularioContacto.get('telefono')?.invalid"
+            class="mensaje-error">
+            <ng-container>
+                <small *ngIf="formularioContacto.get('telefono')?.errors?.['required']">El teléfono es
+                    obligatorio.</small>
+                <small *ngIf="formularioContacto.get('telefono')?.errors?.['pattern']">El teléfono debe tener 10
+                    dígitos.</small>
+            </ng-container>
+        </div>
+        <textarea name="mensaje" formControlName="mensaje" placeholder="Ingrese aquí su mensaje" rows="10"
+            cols="52"></textarea>
+        <div *ngIf="formularioContacto.get('mensaje')?.touched && formularioContacto.get('mensaje')?.invalid"
+            class="mensaje-error">
+            <ng-container>
+                <small *ngIf="formularioContacto.get('mensaje')?.errors?.['required']">Mensaje requerido</small>
+            </ng-container>
+        </div>
+        <div class="item terminos">
+            <label for="terminos">
+                <input type="checkbox" id="terminos" formControlName="terminos" placeholder="Ingrese su contraseña">
+                Acepto términos y condiciones
+                <a href="">politica de tratamiento de datos</a>
+            </label>
+        </div>
+        <div *ngIf="formularioContacto.get('terminos')?.touched && formularioContacto.get('terminos')?.invalid"
+            class="mensaje-error">
+            <ng-container>
+                <small *ngIf="formularioContacto.get('terminos')?.errors?.['required']">Debe aceptar los términos y
+                    condiciones.</small>
+            </ng-container>
+        </div>
+        <button class="btn" type="submit" (click)="enviarFormulario()">Enviar</button>
+    </form>
+</div>
+<!-- BOTÓN WHATSAPP -->
+<!-- <a href="https://web.whatsapp.com/"
+   class="whatsapp-float" aria-label="Contactar por WhatsApp">
+  <img src="assets/img/whatsapp.png" alt="WhatsApp" />
+</a> -->
+<app-footer></app-footer>

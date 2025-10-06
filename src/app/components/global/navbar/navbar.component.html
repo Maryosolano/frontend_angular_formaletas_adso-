@@ -9,16 +9,19 @@
             </span>
             <ul [class]="!estaActivo? 'menu' : 'menu--show'" id="menu"> 
                 <li class="menu-item">
-                    <a href="index.html" class="menu_link menu_link_select">Inicio</a>
+                    <a [routerLink]="['/home']" class="menu_link menu_link_select">Inicio</a>
                 </li>
                 <li class="menu-item">
-                    <a href="servicios.html" class="menu_link">Servicios</a>
+                    <a [routerLink]="['/servicios']" class="menu_link">Servicios</a>
                 </li>
                 <li class="menu-item">
-                    <a href="nosotros.html" class="menu_link">Nosotros</a>
+                    <a [routerLink]="['/nosotros']" class="menu_link">Nosotros</a>
                 </li>
                 <li class="menu-item">
-                    <a href="contacto.html" class="menu_link">Contacto</a>
+                    <a [routerLink]="['/contacto']" class="menu_link">Contacto</a>
+                </li>
+                <li class="menu-item">
+                    <a [routerLink]="['/login']" class="menu_link">Login/Registro</a>
                 </li>
             </ul>
             <div class="social__icon">
@@ -40,7 +43,7 @@
 <section class="banner">
         <img class="banner__img" src="assets/img/imagen formaleta1.jpg" alt="">
         <div class="banner__content">
-            <h1 class="titulo">Formaletas Construcción S.A.S</h1>
+            <h1 class="titulo">CONSTRUFOR S.A.S.</h1>
             <p class="subtitulo">Su socio confiable en soluciones de formaletas para la construcción.</p>
         </div>
 </section>
