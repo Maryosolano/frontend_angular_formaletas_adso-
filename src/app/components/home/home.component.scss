@@ -1,48 +1,63 @@
 /* Estilos del main */
 
-div {
-    flex: 1;
+.main__group {
+    background-color: #ffffff;
+    width: 80%;
+    text-align: left;
+    margin: 2rem auto 5rem auto;
 }
 
-.main__group {
-    padding: 5px;
-    background-color: #104479;
-    color: #ffffff;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 3rem;
-}
+
 
 .titulo {
-    font-size: 20px;
+    font-size: inherit;
     font-weight: bold;
-    color: #ffffff;
-    margin: 0;
+    margin: 0.5rem auto;
     width: 100%;
     text-align: center;
 }
 
-h6 {
-    margin: 0.3rem auto;
+.parrafo {
+    line-height: 1.5;
+    margin: 1rem 0;
+    //padding: 0 6vw;
+    font-size: inherit;
 }
 
-.contenedor {
+h6 {
+    margin: 0.3rem auto;
+    font-size: inherit;
+}
+
+.contenedor,
+.beneficio {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-bottom: 1rem;
+    height: auto;
 }
 
 .item {
     flex: 1 1 100%;
     box-sizing: border-box;
-
     position: relative;
+    margin: 1rem;
 }
 
 .image-wrapper {
     position: relative;
-    height: 10rem;
+    height: 15em;
     overflow: hidden;
+    margin-top: 1rem;
+    border-radius: 1vh;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #727272;
+    margin: 2rem 0;
 }
 
 .imagen,
@@ -55,7 +70,7 @@ h6 {
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Estado inicial */
+
 .imagen {
     opacity: 1;
     z-index: 2;
@@ -64,16 +79,17 @@ h6 {
 .overlay-text {
     opacity: 0;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(30, 39, 54, 0.9);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
     text-align: center;
+    font-size: inherit;
 }
 
-/* Hover en desktop */
+
 .image-wrapper:hover .imagen {
     opacity: 0;
 }
@@ -82,22 +98,16 @@ h6 {
     opacity: 1;
 }
 
-.parrafo {
-    line-height: 1.5;
-    margin: 1rem 0 !important;
-}
-
 .table {
     width: 100%;
     border-collapse: collapse;
     background-color: transparent;
-    color: #ffffff;
     margin-top: 1rem;
 }
 
 thead {
     text-align: center;
-    font-size: 16px;
+    font-size: inherit;
 }
 
 .table th,
@@ -105,7 +115,8 @@ thead {
     padding: 0.75rem;
     border: 1px solid #ddd;
     background-color: transparent;
-    color: #ffffff;
+    font-size: inherit;
+
 }
 
 .table-striped tbody tr:nth-child(odd) {
@@ -124,14 +135,18 @@ thead {
 
 @media screen and (min-width: 600px) {
 
-    .item {
-        flex: 1 1 calc(50% - 10px);
+    .contenedor,
+    .beneficio {
+        gap: 1rem;
+        justify-content: space-between;
+        margin: 0 auto 1rem auto;
     }
-}
-
-@media screen and (min-width: 800px) {
 
     .item {
-        flex: 1 1 calc(25% - 10px);
+        flex: 1 1 calc(32% - 0px);
+    }
+
+    .image-wrapper {
+        height: 25vw;
     }
 }

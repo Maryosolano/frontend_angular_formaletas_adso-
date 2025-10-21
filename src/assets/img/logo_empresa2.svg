@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 640.13 129.25">
+  <!-- Generator: Adobe Illustrator 29.8.2, SVG Export Plug-In . SVG Version: 2.1.1 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #f3b742;
+      }
+
+      .st1 {
+        font-family: Libertad-Bold, Libertad;
+        font-size: 58.53px;
+        font-weight: 700;
+        letter-spacing: -.02em;
+      }
+
+      .st1, .st2, .st3 {
+        fill: #26284a;
+      }
+
+      .st2 {
+        font-family: Libertad, Libertad;
+        font-size: 21.68px;
+      }
+    </style>
+  </defs>
+  <g id="OBJECTS">
+    <g>
+      <path class="st0" d="M127.78,88.09v-.06s-14.99-14.99-14.99-14.99c-1.18-1.18-1.18-3.08,0-4.26h0c1.2-1.2,1.2-3.14,0-4.34l-18.93-18.93c-1.2-1.2-3.14-1.2-4.34,0l-2.13,2.13c-.61-.03-3.75-.22-6.14-2.86-.76-.84-1.26-1.72-1.59-2.54-.95-2.33-2.2-4.53-3.98-6.31l-8.1-8.1c-1.2-1.2-3.14-1.2-4.34,0l-12.04,12.04c-1.2,1.2-1.2,3.14,0,4.34l6.98,6.98c2.03,2.03,4.51,3.67,7.32,4.31,1.05.24,2.23.74,3.3,1.73l.09.08c2.5,2.36,2.55,6.28.13,8.71l-1.54,1.54c-1.2,1.2-1.2,3.14,0,4.34l18.93,18.93c1.2,1.2,3.14,1.2,4.34,0l1.17-1.17c1.31-1.31,3.44-1.31,4.75,0h0c3.32,3.32,7.73,5.35,12.41,5.72l5.48.43c9.99.78,15.05,11.88,11.74,20.55h1.64c7.26-8.03,7.22-20.3-.15-28.27Z"/>
+      <polygon class="st3" points="62.48 118.62 84.65 96.45 62.26 74.06 17.7 118.62 62.48 118.62"/>
+      <polygon class="st3" points="131.96 49.13 201.44 118.62 216.02 118.62 116.78 19.52 95.71 40.52 118.14 62.96 131.96 49.13"/>
+      <polygon class="st3" points="167.24 63.05 189.32 85.05 189.32 47.51 167.24 47.51 167.24 63.05"/>
+      <polygon class="st3" points="129.24 59.59 121.99 66.84 173.77 118.62 188.35 118.62 129.24 59.59"/>
+    </g>
+  </g>
+  <g id="TEXT">
+    <g>
+      <text class="st2" transform="translate(234.03 118.43)"><tspan x="0" y="0">ALQUILER DE FORMALETAS</tspan></text>
+      <text class="st1" transform="translate(234.03 95.39)"><tspan x="0" y="0">Construfor S.A.S</tspan></text>
+    </g>
+  </g>
+</svg>

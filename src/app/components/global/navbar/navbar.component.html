@@ -1,49 +1,38 @@
 <div class="main-nav">
-        <div class="contenedor">
-            <span class="icon_menu">
-                <img class = 'icono_menu'
-                    src="assets/img/menu.png" 
-                    alt="menu" 
-                    id="menuIcon"
-                    (click)="mostrar_items();">
-            </span>
-            <ul [class]="!estaActivo? 'menu' : 'menu--show'" id="menu"> 
-                <li class="menu-item">
-                    <a [routerLink]="['/home']" class="menu_link menu_link_select">Inicio</a>
-                </li>
-                <li class="menu-item">
-                    <a [routerLink]="['/servicios']" class="menu_link">Servicios</a>
-                </li>
-                <li class="menu-item">
-                    <a [routerLink]="['/nosotros']" class="menu_link">Nosotros</a>
-                </li>
-                <li class="menu-item">
-                    <a [routerLink]="['/contacto']" class="menu_link">Contacto</a>
-                </li>
-                <li class="menu-item">
-                    <a [routerLink]="['/login']" class="menu_link">Login/Registro</a>
-                </li>
-            </ul>
-            <div class="social__icon">
-                <a href="#">
-                    <img class="icono_link" src="assets/img/facebook.png" alt="facebook" >
-                </a>
-                <a href="#">
-                    <img class="icono_link" src="assets/img/twitter.png" alt="twitter">
-                </a>
-                <a href="#">
-                    <img class="icono_link" src="assets/img/instagram.png" alt="instagram">
-                </a>
-                <a href="#">
-                    <img class="icono_link" src="assets/img/linkedin.png" alt="linkedin">
-                </a>
-            </div>
-        </div>   
+    <div class="contenedor">
+        <img class="logo navbar-brand" src="assets/img/logo_empresa.svg" alt="Logo Empresa">
+        <span class="icono_menu_container">
+            <img class='icono_menu' src="assets/img/menu.png" alt="menu" id="menuIcon" (click)="mostrar_items();">
+        </span>
+        <ul [class]="estaActivo? 'menu--show' : 'menu'" id="menu">
+            <li class="menu-item" routerLinkActive="menu_link_active">
+                <a [routerLink]="['/home']" routerLinkActive="menu_link_active"
+                    [routerLinkActiveOptions]="{ exact: true }" class="menu_link">Inicio</a>
+            </li>
+            <li class="menu-item" routerLinkActive="menu_link_active">
+                <a [routerLink]="['/servicios']" routerLinkActive="menu_link_active"
+                    [routerLinkActiveOptions]="{ exact: true }" class="menu_link">Servicios</a>
+            </li>
+            <li class="menu-item" routerLinkActive="menu_link_active">
+                <a [routerLink]="['/nosotros']" routerLinkActive="menu_link_active"
+                    [routerLinkActiveOptions]="{ exact: true }" class="menu_link">Nosotros</a>
+            </li>
+            <li class="menu-item" routerLinkActive="menu_link_active">
+                <a [routerLink]="['/contacto']" routerLinkActive="menu_link_active"
+                    [routerLinkActiveOptions]="{ exact: true }" class="menu_link">Contacto</a>
+            </li>
+            <li class="menu-item" routerLinkActive="menu_link_active">
+                <a [routerLink]="['/login']" routerLinkActive="menu_link_active"
+                    [routerLinkActiveOptions]="{ exact: true }" class="menu_link">Acceso</a>
+            </li>
+        </ul>
     </div>
+</div>
 <section class="banner">
-        <img class="banner__img" src="assets/img/imagen formaleta1.jpg" alt="">
-        <div class="banner__content">
-            <h1 class="titulo">CONSTRUFOR S.A.S.</h1>
-            <p class="subtitulo">Su socio confiable en soluciones de formaletas para la construcción.</p>
-        </div>
+    <img class="banner__img" src="assets/img/banner1.png" alt="">
+    <div class="banner__content">
+        <h1 class="titulo">CONSTRUFOR S.A.S.</h1>
+        <p class="subtitulo">Su socio confiable en soluciones de formaletas para la construcción.</p>
+    </div>
 </section>
+

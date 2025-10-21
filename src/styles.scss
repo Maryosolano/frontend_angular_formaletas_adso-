@@ -1,11 +1,11 @@
-*{
+* {
     box-sizing: border-box;
 }
 
 body {
     font-family: 'Segoe UI';
-    background-color: #f4f4f4;
-    font-size: 0.875rem;
+    background-color: #ffffff;
+    font-size: 16px;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -22,3 +22,35 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
+.img {
+    text-align: center;
+}
+
+.img_logo {
+    border-radius: 50%;
+    border: 2px solid rgb(30, 39, 54);
+    filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(567%) hue-rotate(348deg) brightness(101%) contrast(97%);   
+    padding: 15px;
+    width: 12vh;
+    height: 12vh;
+}
+
+.btn{
+    font-size: inherit;
+    width: 100%;
+    background: #fea02c;
+    border-radius: 25px;
+    border: 1px solid #fea02c;
+    color: white;//rgba(30, 39, 54, 0.9);
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+/* @media screen and (min-width: 1500px) {
+    body {
+        font-size: 36px;
+    }
+
+} */

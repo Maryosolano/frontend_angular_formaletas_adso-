@@ -1,53 +1,136 @@
 /* Estilos del footer */
 .footer {
-    background-color: #104479;
+    background: rgba(30, 39, 54, 0.9);
     color: #ffffff;
     text-align: center;
     padding: 5px;
     margin: 1rem 0px 0px;
     width: 100%;
-    position: fixed;
     bottom: 0;
     left: 0;
     align-items: center;
     justify-content: center;
-    z-index: 1000; 
 }
 
 .main__footer {
-    padding: 0px;
-    margin: 0px;
-    font-size: 0.8rem;
-}	
+    width: 90%;
+    text-align: left;
+    margin: 0 auto 1rem auto;
+}
+
+.fieldcontent {
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    border: 0;
+    padding: 0 8px;
+    width: 100%;
+}
+
+legend {
+    padding: 0 0.5rem;
+    text-align: left;
+}
+
+h3 {
+    text-align: left;
+    margin: 1rem 0;
+    font-size: 14px;
+    color: #fea02c;
+}
+
+.line {
+    height: 1px;
+    margin: 1rem 0;
+    background-color: #fea02c;
+}
+
+p {
+    text-align: start;
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+/* .info_contacto,
+.redes_sociales,
+.politicas {
+    width: 100%;
+    margin-bottom: 1rem;
+} */
+
+.contacto {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.logo_ubicacion {
+    filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(567%) hue-rotate(348deg) brightness(101%) contrast(97%);
+    //border: 1px solid #fea02c;
+    margin-right: 15px;
+    align-items: center;
+    padding: 3px;
+    border-radius: 3px;
+    width: 4vh;
+    height: 4vh;
+}
+
+.direccion,
+.telefono,
+.correo,
+.horario {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    width: 100%;
+    padding: 5px;
+}
+
+.iconos_redes {
+    display: flex;
+    justify-content: left;
+    margin-top: 10px;
+    gap: 25px;
+}
+
+.items_politicas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+
+}
+
+.items_politicas a {
+    text-align: left;
+    color: #ffffff;
+    text-decoration: none;
+    width: 100%;
+    font-size: 14px;
+}
 
 .me__footer {
-    padding: 0px;
-    margin: 0px;
-    font-size: 0.6rem;
-     color: #9b9b9b;
-}	
-
-/* @media screen and (min-width: 400px) {
-    .footer {
-        bottom: 0;
-    }    
+    text-align: center;
+    font-size: 10px;
+    margin-top: 1rem;
+    color: #a1a0a0;
 }
 
-@media screen and (min-width: 765px) {
-    .footer {
-        position: absolute;
-        bottom: 0;
-    }    
-}
+@media screen and (min-width: 800px) {
+    .main__footer {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: space-evenly;
+    }
 
-@media screen and (min-width: 880px) {
-    .footer {
-        position: relative;
-    } 
-}
+    .fieldcontent {
+        border: 1px solid #fea02c;
+        width: 31%;
+    }
 
-@media screen and (min-width: 910px) {
-    .footer {
-        position: absolute;
-    }    
-} */
+    .iconos_redes {
+        gap: 5px;
+    }
+}

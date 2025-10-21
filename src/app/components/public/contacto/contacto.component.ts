@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../../global/header/header.component';
 import { FooterComponent } from '../../global/footer/footer.component';
 import { NavbarComponent } from '../../global/navbar/navbar.component';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -7,7 +6,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contacto',
-  imports: [HeaderComponent, FooterComponent, NavbarComponent, FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [ FooterComponent, NavbarComponent, FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './contacto.component.html',
   styleUrl: './contacto.component.scss'
 })

@@ -1,23 +1,35 @@
-/* Estilos navbar */
-
 .main-nav {
     position: relative;
+    background: rgba(30, 39, 54, 0.9);
+    z-index: 2000;
     width: 100%;
-    z-index: 3000px;
-    padding: 10px;
+    padding: 0px 20px;
 }
 
 .contenedor {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
+    width: 95%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.navbar-brand {
+    padding: 0px;
+    margin: 0;
+}
+
+.logo {
+    max-width: 200px;
+    max-height: 90px;
+    z-index: 2100;
 }
 
 .icono_menu {
     position: relative;
-    filter: brightness(0) invert(1);
-    border: 1px solid white;
+    filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(567%) hue-rotate(348deg) brightness(101%) contrast(97%);
+    border: 1px solid #fea02c;
     padding: 3px;
     border-radius: 3px;
     width: 35px;
@@ -25,7 +37,170 @@
     z-index: 2000;
 }
 
-.social__icon {
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+}
+
+.menu--show {
+    display: block;
+    background-color: rgba(30, 39, 54, 0.9);
+    position: absolute;
+    top: 47px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    z-index: 2000;
+    overflow: hidden;
+    transition: height 0.5s linear;
+    height: 230px;
+}
+
+.menu_link {
+    font-size: 14px;
+    //font-size: 90%;   
+    display: block;
+    padding: 10.5px 0px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 100%;
+}
+
+/* hover */
+.menu_link:hover {
+    color: #fea02c;
+}
+
+/* cuando el LI tenga la clase activa, se pinta el enlace */
+.menu_link_active {
+    color: #fea02c;
+}
+
+/* Estilos del banner */
+
+.titulo {
+    font-size: inherit !important;
+    font-weight: bold;
+    color: #fea02c;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.subtitulo {
+    font-size: inherit !important;
+    margin-bottom: 0%;
+    padding: 1rem 2rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.banner {
+    margin-top: -12vw;
+    position: relative;
+}
+
+.banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.banner__img {
+    width: 100%;
+    height: 40vh;
+    min-height: 290px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner__content {
+    width: 90%;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1500;
+}
+
+@media screen and (min-width: 800px) {
+    .icono_menu {
+        display: none;
+    }
+
+    .menu,
+    .menu--show {
+        top: 50px;
+        left: 0;
+        padding: 0;
+        margin: 0 !important;
+        list-style: none;
+        text-align: center;
+        z-index: 2200;
+        //overflow: hidden;
+        display: flex;
+        height: auto !important;
+        position: static;
+        width: auto;
+        justify-content: flex-start;
+    }
+
+    .menu_link {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 840px) {
+
+    .logo {
+        max-width: 20vw;
+        max-height: 10vw;
+        z-index: 2100;
+    }
+    .banner__content {
+   
+    top: 75%;
+    
+   
+}
+ .banner__img {
+        height: 35vw !important;
+    }
+    
+}
+
+/* @media screen and (min-width: 1600px) {
+    .menu-item {
+        padding: 0 40px;
+    }
+
+   
+
+    .banner__img {
+        height: 45vh !important;
+    }
+
+    
+
+} */
+
+/* .social__icon {
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -44,124 +219,9 @@
     height: 35px;
     background-color: #fff;
     object-fit: contain;
-}	
-
-.menu {
-    position: absolute;
-    height: 0;
-}	
-
-.menu--show {
-    background-color: rgba(0,0,0,0.65);
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    text-align: center;
-    z-index: 2000;
-    overflow: hidden;
-    transition: height 0.3s linear;
-    height: 270px; /* Altura total del Menu al desplegarse, 54 pixeles por cada item */
 }
+ */
 
-.menu_link {
-    display: block;
-    padding: 15px;
-    color: #fff;
-    text-decoration: none;
-}
-
-.menu_link:hover {
-    background-color: #104479;
-}
-
-.menu_link_select {
-    background-color: #104479;
-}
-
-/* Estilos del banner */
-
-.titulo {  
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffffff;
-    margin: 0;
-    width: 100%;
-    text-align: center;
-}
-
-.subtitulo {
-    font-size: 14px;
-    margin-bottom: 0%;
-}
-
-.banner {
-    margin-top: -55px;
-    position: relative;
-}
-
-.banner:before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-}
-
-.banner__img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-}
-
-.banner__content {
-    width: 90%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #ffffff;
-    z-index: 1500;
-    font-size: 1.5em;
-}
-
-@media screen and (min-width: 800px) {
-
-    .icono_menu {
-        display: none;
-    }
-
-    .menu, .menu--show{
-        background-color: rgba(0,0,0,0.65);
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 800px;
-        padding: 0;
-        margin: 0 !important;
-        list-style: none;
-        text-align: center;
-        z-index: 2000;
-        overflow: hidden;
-        transition: height 0.3s linear;
-        display: flex;
-        height: auto;
-        position: static;
-        width: auto;
-        justify-content: flex-start; /* Alinea a la izquierda */         
-    }
-    .menu-item{
-        width: 9rem;
-    }
-
-    .banner {
-        margin-top: -75px;
-    }
-}
+/* .menu_link_select {
+    background-color: #1c1d1d;
+} */

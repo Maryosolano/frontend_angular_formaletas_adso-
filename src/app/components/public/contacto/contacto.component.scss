@@ -1,11 +1,33 @@
+.container--flex {
+    width: 80%;
+    text-align: left;
+    margin: 1rem auto 1rem auto;
+    padding: 0;
+}
+.cabecera{
+    width: 100%;
+}
+
+.titulo {
+    font-size: inherit;
+    font-weight: bold;
+    margin: 0.5rem auto;
+    width: 100%;
+    text-align: center;
+}
+
+.parrafo {
+    line-height: 1.5;
+    margin: 1rem 0;
+    //padding: 0 6vw;
+    font-size: inherit;
+}
+
 .contenedor {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #104479;
-    color: #ffffff;
-    padding: 1rem;
-    min-height: 45rem;
+    width: 100%;
 }
 
 .formulario {
@@ -13,7 +35,7 @@
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: auto;
     max-width: 400px;
     margin: 0rem auto;
     box-sizing: border-box;
@@ -31,30 +53,34 @@ h2 {
 }
 
 .item {
-    margin-bottom: 5px;
+    padding: 1rem 0.5rem;
+    width: 35vh;
+    max-width: 100%;
 }
 
-.input-group {
+.input-group {    
     position: relative;
     display: flex;
     align-items: center;
+    padding: 0.5rem 0;
 }
 
-.input-group input {
+.input-group input, textarea {
+    border: 2px solid #fea02c;
     width: 100%;
-    padding-left: 35px;
+    padding: 0.5rem 35px;
     /* espacio para el ícono */
-    padding-right: 35px;
+    //padding-right: 35px;
     /* espacio para el ícono derecho */
     box-sizing: border-box;
+    font-size: inherit;
 }
 
 /* Icono izquierdo */
 .input-group .left-icon {
     position: absolute;
     left: 10px;
-    color: #666;
-
+    filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(567%) hue-rotate(348deg) brightness(101%) contrast(97%);
 }
 
 /* Icono derecho */
@@ -73,34 +99,36 @@ h2 {
 }
 
 .terminos {
-    font-size: 0.8rem;
+    font-size: inherit;
     margin-top: 0.5rem;
     display: flex;
     flex-wrap: wrap;
 }
 
-.btn {
-    background-color: #ffffff; 
-    border: none;
-    border-radius: 4px;
-    color: #104479;
-    cursor: pointer;
-    padding: 0.2rem 1rem;
-    font-weight: bold;
-    font-size: 1rem;
-    margin: 0.5rem 0;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
 a {
     text-decoration: none;
-    color: #ffffff;
+    color: black;
     cursor: pointer;
 }
+
 .mensaje-error {
     color: #ffcccb; /* Color rojo claro para el texto de error */
     font-size: 0.8rem;
     margin-top: 0.1rem;
+}
+
+.formulario {
+    border: 2px solid #fea02c;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto;
+    //max-width: 400px;
+    margin: 0rem auto;
+}
+
+@media screen and (min-width: 800px) {
+    .cabecera, .contenedor{
+        width: 50%;
+    }
 }

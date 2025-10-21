@@ -1,8 +1,12 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 <app-navbar></app-navbar>
 
 <main class="main__group">
   <section>
+    <div class="img">
+      <img class="img_logo" src="assets/img/home1.png" alt="Socio Estrategico">
+    </div>
+
     <h2 class="titulo">Tu socio estratégico para obras de alto impacto.</h2>
     <p class="parrafo">En Formaletas Construcción S.A.S. convertimos cada vertido en una garantía de éxito.
       Nuestras soluciones de alquiler de formaletas están diseñadas para ajustarse a las características específicas de
@@ -12,51 +16,28 @@
   </section>
   <hr>
   <section>
-    <h2 class="titulo">¿Qué Hacemos por Ti?.</h2>
+    <div class="img">
+      <img class="img_logo" src="assets/img/home2.png" alt="Socio Estrategico">
+    </div>
+    <h2 class="titulo">¿Qué Hacemos por Ti?</h2>
     <div class="contenedor">
-      <div class="item">
-        <h6>Experiencia Especializada.</h6>
-        <div class="image-wrapper">
-          <img class="imagen" src="assets/img/imagen formaleta1.jpg" alt=""> <!-- imagen Provisional -->
-          <span class="overlay-text">
-            Te asesoramos en la elección, montaje y desmontaje de formaletas, optimizando recursos y evitando
-            contratiempos.
-          </span>
-        </div>
-      </div>
-      <div class="item">
-        <h6>Calidad Certificada.</h6>
-        <div class="image-wrapper">
-          <img class="imagen" src="assets/img/imagen formaleta1.jpg" alt=""> <!-- imagen Provisional -->
-          <span class="overlay-text">
-            Solo manejamos equipos que cumplen con la normativa vigente y los estándares más exigentes de la
-            industria.
-          </span>
-        </div>
-      </div>
-      <div class="item">
-        <h6>Eficiencia Operativa.</h6>
-        <div class="image-wrapper">
-          <img class="imagen" src="assets/img/imagen formaleta1.jpg" alt=""><!-- imagen Provisional -->
-          <span class="overlay-text">
-            Implementamos cronogramas de entrega y recogida que se alinean con tus plazos de obra, garantizando
-            continuidad en el proceso constructivo.
-          </span>
-        </div>
-      </div>
-      <div class="item">
-        <h6>Acompañamiento Integral.</h6>
-        <div class="image-wrapper">
-          <img class="imagen" src="assets/img/imagen formaleta1.jpg" alt=""> <!-- imagen Provisional -->
-          <span class="overlay-text">
-            Desde la planeación hasta la culminación, nuestro equipo técnico te brinda soporte constante para que
-            cada etapa se desarrolle sin sorpresas.
+      <div class="item" *ngFor="let card of cards; let i = index">
+        <h6>{{ card.titulo }}</h6>
+        <div class="image-wrapper" [class.is-flipped]="flipped[i]" (click)="toggleFlip(i)">
+          <img class="imagen card-front" [src]="card.img" alt="">
+          <span class="overlay-text card-back">
+            {{ card.text }}
           </span>
         </div>
       </div>
     </div>
     <hr>
-    <div class="beneficio">
+  </section>
+  <section>
+    <div class="img">
+        <img class="img_logo" src="assets/img/home3.png" alt="Socio Estrategico">
+      </div>
+    <div class="beneficio">  
       <h3 class="titulo">Beneficios que marcan la diferencia.</h3>
       <table class="table table-striped">
         <thead>
@@ -74,9 +55,13 @@
       </table>
     </div>
     <hr>
+    <div class="img">
+        <img class="img_logo" src="assets/img/home4.png" alt="Socio Estrategico">
+      </div>
     <div class="confianza">
       <h3 class="titulo">Construye con la Confianza del Futuro.</h3>
-      <p class="parrafo">Cada formaleta que entregamos refleja nuestro compromiso con la excelencia y la seguridad. Únete a la
+      <p class="parrafo">Cada formaleta que entregamos refleja nuestro compromiso con la excelencia y la seguridad.
+        Únete a la
         comunidad de clientes que han elevado sus proyectos con soluciones precisas y eficientes.
       </p>
     </div>

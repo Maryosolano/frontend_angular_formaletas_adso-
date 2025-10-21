@@ -5,7 +5,7 @@ import { FooterComponent } from '../../global/footer/footer.component';
 
 @Component({
   selector: 'app-nosotros',
-  imports: [ HeaderComponent, NavbarComponent, FooterComponent],
+  imports: [ NavbarComponent, FooterComponent],
   templateUrl: './nosotros.component.html',
   styleUrl: './nosotros.component.scss'
 })
