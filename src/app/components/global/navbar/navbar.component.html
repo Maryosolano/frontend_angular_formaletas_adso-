@@ -22,7 +22,15 @@
                     [routerLinkActiveOptions]="{ exact: true }" class="menu_link">Contacto</a>
             </li>
             <li class="menu-item" routerLinkActive="menu_link_active">
-                <a [routerLink]="['/login']" routerLinkActive="menu_link_active"
+                <a *ngIf="isLoggedIn" [routerLink]="['/admin']" routerLinkActive="menu_link_active"
+                    [routerLinkActiveOptions]="{ exact: true }" class="menu_link">admin</a>
+            </li>
+            <li class="menu-item" routerLinkActive="menu_link_active">
+                <a *ngIf="isLoggedIn" routerLink routerLinkActive="menu_link_active"
+                    [routerLinkActiveOptions]="{ exact: true }" class="menu_link" (click)="salir();" >Salir</a>
+            </li>
+            <li class="menu-item" routerLinkActive="menu_link_active">
+                <a *ngIf="!isLoggedIn" [routerLink]="['/login']" routerLinkActive="menu_link_active"
                     [routerLinkActiveOptions]="{ exact: true }" class="menu_link">Acceso</a>
             </li>
         </ul>

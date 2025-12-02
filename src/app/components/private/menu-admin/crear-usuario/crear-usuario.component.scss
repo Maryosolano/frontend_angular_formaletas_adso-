@@ -1,0 +1,58 @@
+
+
+.form-container {
+    max-width: 90%;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.editar-usuario-form {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    margin: 0rem auto;
+    box-sizing: border-box;
+}
+
+.item {
+    padding: 0.5rem 0.5rem;
+    width: 100%;
+}
+
+.input-group {    
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.input-group input, textarea, .selector {
+    border: 2px solid #fea02c;
+    width: 100%;
+    padding: 0.5rem 35px;
+    box-sizing: border-box;
+    font-size: inherit;
+}
+
+/* Icono izquierdo */
+.input-group .left-icon {
+    position: absolute;
+    left: 10px;
+    filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(567%) hue-rotate(348deg) brightness(101%) contrast(97%);
+}
+
+@media screen and (min-width: 650px) {
+    .item{
+        width: 50% !important;
+    }
+}
+
+
+

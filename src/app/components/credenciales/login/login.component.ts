@@ -1,42 +1,28 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../../global/header/header.component';
 import { NavbarComponent } from '../../global/navbar/navbar.component';
 import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GeneralService } from '../../../services/general.service';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../../global/footer/footer.component';
+import { CredencialesService } from '../../../services/credenciales.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [HeaderComponent, NavbarComponent, FooterComponent, FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [ NavbarComponent, FooterComponent, FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
 
-  formRegistro: any = FormGroup;
+  formLogin: any = FormGroup;
   verTexto: boolean = false;
   
-  get nombreNoValido() {
-    return this.formRegistro.get('nombre').invalid && this.formRegistro.get('nombre').touched;
-  }
-  get passwordNoValido() {
-    return this.formRegistro.get('password').invalid && this.formRegistro.get('password').touched;
-  }
-
-  public errorMessage = {
-    nombre: [
-      { type: 'required', message: 'El nombre es obligatorio' },
-      { type: 'minlength', message: 'El nombre debe tener al menos 5 caracteres' }
-    ],
-    password: [
-      { type: 'required', message: 'La contrase;a es obligatoria' }
-    ],
-  }
-
   constructor(
     private fb: FormBuilder, /* creacion de fomulario reactivo */
-    private generalService: GeneralService /*inyeccion del servicio*/
+    private generalService: GeneralService, /*inyeccion del servicio*/
+    private credencialesService: CredencialesService,
+    private router: Router
   ) { 
     this.crearFormulario(); /*llamado inicial a la funcion para inicializar el formulario*/
   }
@@ -45,25 +31,33 @@ export class LoginComponent {
   }
 
   crearFormulario(){
-    this.formRegistro = this.fb.group({
-      nombre: ['', [Validators.required, Validators.minLength(5)]],
-       /* se valida que tenga minimo 8 caracteres */
-      password: ['', [Validators.required, Validators.minLength(8)]],
+    this.formLogin
+     = this.fb.group({
+      email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/)]],
+       /* se valida que tenga minimo 5 caracteres */
+      contrasena: ['', [Validators.required, Validators.minLength(5)]],
     })
-    console.log(this.formRegistro.value);
+    console.log(this.formLogin
+      .value);
   }
 
-  guardar(){
-    if(this.formRegistro.invalid){
-      console.log('Formulario no valido', this.formRegistro.value);
-      
-      return Object.values(this.formRegistro.controls).forEach((control: any) => {
+  login(){
+    if(this.formLogin
+      .invalid){
+      return Object.values(this.formLogin
+        .controls).forEach((control: any) => {
         /* marca todos los campos como tocados para que se muestren los mensajes de error */
         control.markAsTouched(); 
       }); 
-    }
-    // Realizar el envío del formulario o cualquier otra acción necesaria
-    console.log('Formulario válido y listo para enviar:', this.formRegistro.value);
+    }   
+    this.credencialesService.userLogin(this.formLogin
+      .value).subscribe( (resp: any) => {
+      this.generalService.setToken(resp.access_token);
+      this.router.navigate(['/admin']);      
+    }, error => {
+      console.log('error en el login', error);
+      this.generalService.showAlert('Error', 'Credenciales incorrectas', 'error');
+    });
   }
 
   verPassword(){

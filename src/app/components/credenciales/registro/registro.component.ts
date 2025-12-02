@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../../global/header/header.component';
 import { NavbarComponent } from '../../global/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -8,7 +7,7 @@ import { FooterComponent } from '../../global/footer/footer.component';
 
 @Component({
   selector: 'app-registro',
-  imports: [HeaderComponent, NavbarComponent, FooterComponent, FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [ NavbarComponent, FooterComponent, FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.scss'
 })
@@ -72,7 +71,6 @@ export class RegistroComponent {
     private fb: FormBuilder, /* creacion de fomulario reactivo */
     private generalService: GeneralService /*inyeccion del servicio*/
   ) { 
-    this.roles = this.generalService.getData();
     this.crearFormulario(); /*llamado inicial a la funcion para inicializar el formulario*/
   }
 

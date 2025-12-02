@@ -3,6 +3,7 @@ import { FooterComponent } from '../../global/footer/footer.component';
 import { NavbarComponent } from '../../global/navbar/navbar.component';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { GeneralService } from '../../../services/general.service';
 
 @Component({
   selector: 'app-contacto',
@@ -54,13 +55,11 @@ export class ContactoComponent {
 
   constructor(
     private fb: FormBuilder,
+    private generalService: GeneralService 
   ) {
     this.crearFormulario();
    }
-   ngOnInit(): void {
-    
-    //console.log(this.formularioContacto);
-  }
+   ngOnInit(): void {}
 
   crearFormulario() {
     this.formularioContacto = this.fb.group({
@@ -72,14 +71,14 @@ export class ContactoComponent {
     });
   }
 
-  enviarFormulario() {
-     if(this.formularioContacto.invalid){
+  enviarFormulario() {    
+    if(this.formularioContacto.invalid){
       return Object.values(this.formularioContacto.controls).forEach((control: any) => {
         control.markAsTouched(); /* marca todos los campos como tocados para que se muestren los mensajes de error */
       }); 
     }
     console.log(this.formularioContacto);
-    // Aquí puedes agregar la lógica para enviar el formulario, como una llamada a un servicio HTTP.
+    // Aquí se agrega la lógica para enviar el formulario, como una llamada a un servicio HTTP.
   }
 
 }

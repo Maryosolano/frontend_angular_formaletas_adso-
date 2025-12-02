@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<fieldset class="fieldcontent">
+    <legend class="legendcontent">
+        <h3>Gestion administrativa</h3>
+    </legend>
+    <section class="card-container">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-user left-icon"></i>
+                <a class="item" [routerLink]="['/admin/listar-usuarios']">Gestion de usuarios</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-user left-icon"></i>
+                <a class="item" [routerLink]="['/admin/listar-proveedores']">Gestion de proveedores</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-user left-icon"></i>
+                <a class="item" [routerLink]="['/admin/listar-inventarios']">Gestion de inventarios</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-user left-icon"></i>
+                <a class="item" [routerLink]="['/admin/listar-clientes']">Gestion de clientes</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-user left-icon"></i>
+                <a class="item" [routerLink]="['/admin/listar-parametros']">Gestion de parámetros</a>
+            </div>
+        </div>
+    </section>
+</fieldset>
+<app-footer></app-footer>

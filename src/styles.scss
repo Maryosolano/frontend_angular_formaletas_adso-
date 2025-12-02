@@ -23,6 +23,12 @@ body {
     align-items: center;
 }
 
+.mensaje-error {
+    color: #ff0400; /* Color rojo claro para el texto de error */
+    font-size: inherit;
+    margin-top: 0.1rem;
+}
+
 .img {
     text-align: center;
 }
@@ -36,16 +42,27 @@ body {
     height: 12vh;
 }
 
-.btn{
+.btn, .btn-secondary{
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
     font-size: inherit;
-    width: 100%;
-    background: #fea02c;
+    width: 80%;
     border-radius: 25px;
     border: 1px solid #fea02c;
-    color: white;//rgba(30, 39, 54, 0.9);
     text-transform: uppercase;
     font-weight: bold;
     padding: 0.5rem 1rem;
+    margin: 0.5rem auto;
+}
+
+.btn{
+    background: #fea02c;
+    color: white;//rgba(30, 39, 54, 0.9);
+}
+
+.btn-secondary{
+    border: 1px solid #fea02c;
+    color: rgb(30, 39, 54);
 }
 
 /* @media screen and (min-width: 1500px) {

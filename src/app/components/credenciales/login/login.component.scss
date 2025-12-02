@@ -29,8 +29,8 @@ h2 {
 }
 
 .item {
-    padding: 1rem 2.5rem;
-    width: 35vh;
+    padding: 1rem auto;
+    width: auto;
 }
 
 .input-group {    
@@ -64,11 +64,4 @@ h2 {
     right: 20px;
     filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(567%) hue-rotate(348deg) brightness(101%) contrast(97%);
     cursor: pointer;
-}
-
-.mensaje-error {
-    color: #ffcccb;
-    /* Color rojo claro para el texto de error */
-    font-size: 0.8rem;
-    margin-top: 0.1rem;
 }

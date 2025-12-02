@@ -1,0 +1,96 @@
+<app-navbar></app-navbar>
+<div class="form-container">
+    <section class="header-seccion">
+        <h2 class="titulo-seccion">Editar Usuario</h2>
+    </section>
+    <form *ngIf="user" [formGroup]="formEditarUsuario" (ngSubmit)="guardarCambios()" class="editar-usuario-form">
+        <div class="item">
+            <label>
+                Nombres:
+            </label>
+            <div class="input-group">
+                <input type="text" formControlName="nombre" placeholder="Ingrese sus nombres" name="nombre">
+            </div>
+            <div *ngIf="formEditarUsuario.get('nombre')?.touched && formEditarUsuario.get('nombre')?.invalid"
+                class="mensaje-error">
+                <ng-container>
+                    <small *ngIf="formEditarUsuario.get('nombre')?.errors?.['required']">El nombre es
+                        obligatorio.</small>
+                </ng-container>
+            </div>
+        </div>
+        <div class="item">
+            <label for="mi-selector">
+                Tipo documento:
+            </label>
+            <div class="input-group">
+                <select class="selector" name="tipo_documento_id" id="mi-selector" formControlName="tipo_documento_id">
+                    <option value="" disabled [selected]="!user.tipo_documento_id"> Seleccione una opción</option>
+                    <option *ngFor="let tipo of listaTiposDocumento" [value]="tipo.id_tipo_documento">{{tipo.nombre}}
+                    </option>
+                </select>
+            </div>
+            <div *ngIf="formEditarUsuario.get('tipo_documento_id')?.touched && formEditarUsuario.get('tipo_documento_id')?.invalid"
+                class="mensaje-error">
+                <ng-container>
+                    <small *ngIf="formEditarUsuario.get('tipo_documento_id')?.errors?.['required']">El tipo documento es
+                        obligatorio.</small>
+                </ng-container>
+            </div>
+        </div>
+        <div class="item">
+            <label>
+                Número de Documento:
+            </label>
+            <div class="input-group">
+                <input type="phone" formControlName="num_documento" placeholder="Ingrese su numero de documento"
+                    name="num_documento">
+            </div>
+            <div *ngIf="formEditarUsuario.get('num_documento')?.touched && formEditarUsuario.get('num_documento')?.invalid"
+                class="mensaje-error">
+                <ng-container>
+                    <small *ngIf="formEditarUsuario.get('num_documento')?.errors?.['required']">El número de documento es
+                        obligatorio.</small>
+                    <small *ngIf="formEditarUsuario.get('num_documento')?.errors?.['minLength']">El número de documento
+                        debe ser valido.</small>
+                </ng-container>
+            </div>
+        </div>
+        <div class="item">
+            <label>
+                Correo:
+            </label>
+            <div class="input-group">
+                <input type="phone" formControlName="email" placeholder="Ingrese su correo electrónico" name="email">
+            </div>
+            <div *ngIf="formEditarUsuario.get('email')?.touched && formEditarUsuario.get('email')?.invalid"
+                class="mensaje-error">
+                <ng-container>
+                    <small *ngIf="formEditarUsuario.get('email')?.errors?.['required']">El email es obligatorio.</small>
+                    <small *ngIf="formEditarUsuario.get('email')?.errors?.['pattern']">El email debe ser valido.</small>
+                </ng-container>
+            </div>
+        </div>
+        <div class="item">
+            <label for="mi-selector">
+                Perfil:
+            </label>
+            <div class="input-group">
+                <select class="selector" name="id_perfil" id="mi-selector" formControlName="id_perfil">
+                    <option value="" disabled [selected]="!user.id_perfil"> Seleccione una opción</option>
+                    <option *ngFor="let perfil of listaPerfiles" [value]="perfil.id">{{perfil.nombre}}</option>
+                </select>
+            </div>
+            <div *ngIf="formEditarUsuario.get('id_perfil')?.touched && formEditarUsuario.get('id_perfil')?.invalid"
+                class="mensaje-error">
+                <ng-container>
+                    <small *ngIf="formEditarUsuario.get('id_perfil')?.errors?.['required']">El rol es
+                        obligatorio.</small>
+                </ng-container>
+            </div>
+        </div>
+        <button class="btn" type="submit">Guardar Cambios</button>
+        <button class="btn-secondary" type="button" [routerLink]="['/admin/listar-usuarios']">Cancelar</button>
+    </form>
+</div>
+<app-footer></app-footer>

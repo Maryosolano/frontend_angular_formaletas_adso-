@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<section class="header-seccion">
+    <h2 class="titulo-seccion">Listado de Usuarios</h2>
+    <i class="fa-solid fa-circle-plus add" [routerLink]="['/admin/crear-usuario']"></i>
+</section>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Tipo Documento</th>
+            <th>Número Documento</th>
+            <th>Correo</th>
+            <th>Perfil</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of listaUsuarios">
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.tipoDocumentoNombre }}</td>
+            <td>{{ usuario.num_documento }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>{{ usuario.perfilNombre }}</td>
+            <td>
+                <span class="icono" [routerLink]="['/admin/editar-usuario', usuario.id]">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                </span>
+                
+            </td>
+            <td>
+                <span class="icono" (click)="eliminarUsuario(usuario.id)"><i class="fa-solid fa-trash"></i></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<app-footer></app-footer>

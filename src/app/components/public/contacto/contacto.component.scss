@@ -54,8 +54,8 @@ h2 {
 
 .item {
     padding: 1rem 0.5rem;
-    width: 35vh;
-    max-width: 100%;
+    width: auto;
+    max-width: 95%;
 }
 
 .input-group {    
@@ -109,12 +109,6 @@ a {
     text-decoration: none;
     color: black;
     cursor: pointer;
-}
-
-.mensaje-error {
-    color: #ffcccb; /* Color rojo claro para el texto de error */
-    font-size: 0.8rem;
-    margin-top: 0.1rem;
 }
 
 .formulario {

@@ -2,7 +2,7 @@
 <app-navbar></app-navbar>
 
 <div class="contenedor">
-  <form [formGroup]="formRegistro" class="formulario">
+  <form [formGroup]="formLogin" class="formulario">
     <h2>Login</h2>
     <div class="item">
       <label>
@@ -10,32 +10,33 @@
       </label>
       <div class="input-group">
         <i class="fas fa-user left-icon"></i>
-        <input type="text" formControlName="nombre" placeholder="Ingrese su nombre">
+        <input type="text" formControlName="email" placeholder="Ingrese su email">
+      </div>
+      <div *ngIf="formLogin.get('email')?.touched && formLogin.get('email')?.invalid" class="mensaje-error">
+        <ng-container>
+          <small *ngIf="formLogin.get('email')?.errors?.['required']">El email es obligatorio.</small>
+          <small *ngIf="formLogin.get('email')?.errors?.['pattern']">El email debe ser valido.</small>
+        </ng-container>
       </div>
     </div>
-    <div *ngIf="formRegistro.get('nombre')?.touched && formRegistro.get('nombre')?.invalid" class="mensaje-error">
-      <ng-container>
-        <small *ngIf="formRegistro.get('nombre')?.errors?.['required']">El nombre es obligatorio.</small>
-        <small *ngIf="formRegistro.get('nombre')?.errors?.['minlength']">El nombre debe tener al menos 5
-          caracteres.</small>
-      </ng-container>
-    </div>
+
     <div class="item">
       <label>
         Contraseña:
       </label>
       <div class="input-group">
         <i class="fa-solid fa-lock left-icon"></i>
-        <input [type]="verTexto? 'text' : 'password'" formControlName="password" placeholder="Ingrese su contraseña">
+        <input [type]="verTexto? 'text' : 'password'" formControlName="contrasena" placeholder="Ingrese su contraseña">
         <i class="right-icon" [class]="verTexto? 'fas fa-eye-slash' : 'fas fa-eye' " (click)="verPassword()"></i>
-      </div>      
+      </div>
+      <div *ngIf="formLogin.get('contrasena')?.touched && formLogin.get('contrasena')?.invalid" class="mensaje-error">
+        <ng-container>
+          <small *ngIf="formLogin.get('contrasena')?.errors?.['required']">La contraseña es obligatoria.</small>
+        </ng-container>
+      </div>
     </div>
-    <div *ngIf="formRegistro.get('password')?.touched && formRegistro.get('password')?.invalid" class="mensaje-error">
-      <ng-container>
-        <small *ngIf="formRegistro.get('password')?.errors?.['required']">La contraseña es obligatoria.</small>
-      </ng-container>
-    </div>
-    <button class="btn" type="submit" (click)="guardar()">Aceptar</button>
+
+    <button class="btn" type="submit" (click)="login()">Aceptar</button>
   </form>
 
 </div>
